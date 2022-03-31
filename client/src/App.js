@@ -9,7 +9,7 @@ const App = () => {
   //pagination
 
   const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostPerPage] = useState(5);
+  const [postsPerPage, setPostPerPage] = useState(10);
 
   const url = "https://jsonplaceholder.typicode.com/posts";
 
@@ -34,13 +34,13 @@ const App = () => {
     loadData();
   }, []);
 
-  if (loading) {
-    return (
-      <div class="text-center my-25">
-        <h1>Loading...</h1>
-      </div>
-    );
-  }
+  // if (loading) {
+  //   return (
+  //     <div class="text-center my-25">
+  //       <h1>Loading...</h1>
+  //     </div>
+  //   );
+  // }
 
   //To get the last posts index position
 
