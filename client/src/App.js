@@ -3,14 +3,11 @@ import Posts from "./components/Posts";
 import PaginationIndex from "./components/PaginationIndex";
 import ReactPaginate from "react-paginate";
 import "./App.css";
+import Paginationfinal from "./components/PaginationusingReactpackage/Paginationfinal";
 
 const App = () => {
   const [data, setData] = useState([]);
 
-  //for pagination
-  const PER_PAGE = 1;
-
-  const [currentPage, setCurrentPage] = useState(0);
 
   const url = "https://jsonplaceholder.typicode.com/posts";
 
@@ -34,42 +31,12 @@ const App = () => {
     loadData();
   }, []);
 
-  const handlePageClick = ({ selected: slectedPage }) => {
-    setCurrentPage(slectedPage);
-  };
-
-  const offSet = currentPage * PER_PAGE;
-
-  const currrentPagedata = data
-    .slice(offSet, offSet + PER_PAGE)
-    .map((res, index) => (
-      <div key={index.id}>
-        <h1>{res.title}</h1>
-      </div>
-    ));
-
-  //total page count
-
-  const pageCount = Math.ceil(data.length / PER_PAGE);
 
   return (
     <React.Fragment>
-      {currrentPagedata}
-      <ReactPaginate
-        breakLabel="..."
-        nextLabel="next >"
-        pageClassName={"pagination-design"}
-        onPageChange={handlePageClick}
-        containerClassName={"pagination"}
-        previousLinkClassName={"pagination__link"}
-        nextLinkClassName={"pagination__link"}
-        activeClassName={"pagination__link--active"}
-        pageCount={pageCount}
-        disabledClassName={"pagination__link--disabled"}
-        previousLabel="Previous"
-        previousClassName={"previous-button"}
-        nextClassName={"next-button"}
-      />
+
+      <Paginationfinal data={data} />
+
     </React.Fragment>
   );
 };

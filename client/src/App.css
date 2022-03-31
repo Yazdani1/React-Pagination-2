@@ -35,6 +35,9 @@
 .pagination{
   border: 1px solid black;
   padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .pagination__link--active{
@@ -60,6 +63,12 @@
   justify-content: center;
   text-decoration: none;
 }
+
+.pagination-design:hover{
+  background-color: black;
+  color: white;
+}
+
 
 
 
