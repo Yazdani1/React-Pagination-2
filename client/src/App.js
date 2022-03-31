@@ -1,15 +1,16 @@
 import React, { useEffect, useState } from "react";
 import Posts from "./components/Posts";
-import Pagination from "./components/Pagination";
+import PaginationIndex from "./components/PaginationIndex";
+import ReactPaginate from "react-paginate";
+import "./App.css";
 
 const App = () => {
   const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
 
-  //pagination
+  //for pagination
+  const PER_PAGE = 1;
 
-  const [currentPage, setCurrentPage] = useState(1);
-  const [postsPerPage, setPostPerPage] = useState(10);
+  const [currentPage, setCurrentPage] = useState(0);
 
   const url = "https://jsonplaceholder.typicode.com/posts";
 
@@ -21,7 +22,6 @@ const App = () => {
       .then((result) => {
         if (result) {
           setData(result);
-          setLoading(false);
           console.log(result);
         }
       })
@@ -34,34 +34,41 @@ const App = () => {
     loadData();
   }, []);
 
-  // if (loading) {
-  //   return (
-  //     <div class="text-center my-25">
-  //       <h1>Loading...</h1>
-  //     </div>
-  //   );
-  // }
+  const handlePageClick = ({ selected: slectedPage }) => {
+    setCurrentPage(slectedPage);
+  };
 
-  //To get the last posts index position
+  const offSet = currentPage * PER_PAGE;
 
-  const indexOfLastPost = currentPage * postsPerPage;
-  const indexOfFirstPost = indexOfLastPost - postsPerPage;
-  const currentPosts = data.slice(indexOfFirstPost, indexOfLastPost);
+  const currrentPagedata = data
+    .slice(offSet, offSet + PER_PAGE)
+    .map((res, index) => (
+      <div key={index.id}>
+        <h1>{res.title}</h1>
+      </div>
+    ));
 
-  //to change page
+  //total page count
 
-  const paginate =(pageNumber)=>{
-    setCurrentPage(pageNumber)
-  }
+  const pageCount = Math.ceil(data.length / PER_PAGE);
 
   return (
     <React.Fragment>
-      <h1>Data With Pagination</h1>
-      <Posts posts={currentPosts} />
-      <Pagination 
-      postsPerPage={postsPerPage} 
-      totalPosts={data.length} 
-      paginateClick={paginate}
+      {currrentPagedata}
+      <ReactPaginate
+        breakLabel="..."
+        nextLabel="next >"
+        pageClassName={"pagination-design"}
+        onPageChange={handlePageClick}
+        containerClassName={"pagination"}
+        previousLinkClassName={"pagination__link"}
+        nextLinkClassName={"pagination__link"}
+        activeClassName={"pagination__link--active"}
+        pageCount={pageCount}
+        disabledClassName={"pagination__link--disabled"}
+        previousLabel="Previous"
+        previousClassName={"previous-button"}
+        nextClassName={"next-button"}
       />
     </React.Fragment>
   );

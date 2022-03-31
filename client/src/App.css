@@ -29,3 +29,77 @@
   background-color: blue;
   color: aliceblue;
 }
+
+/* pagination package  design */
+
+.pagination{
+  border: 1px solid black;
+  padding: 10px;
+}
+
+.pagination__link--active{
+
+  border: 1px solid black;
+  padding: 10px;
+  background-color: black;
+  color: white;
+}
+.pagination-design{
+  display: flex;
+  list-style-type: none;
+  margin: 5px;
+  border: 1px solid black;
+  padding: 7px;
+  height: 30px;
+  width: 30px;
+  color: white;
+  border-radius: 90px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
+
+
+.previous-button{
+  display: flex;
+  list-style-type: none;
+  margin: 5px;
+  border: 1px solid black;
+  padding: 7px;
+  height: 30px;
+  width: 90px;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.next-button{
+  display: flex;
+  list-style-type: none;
+  margin: 5px;
+  border: 1px solid black;
+  padding: 7px;
+  height: 30px;
+  width: 90px;
+  color: white;
+  border-radius: 20px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.pagination__link--disabled{
+  display: none;
+}
