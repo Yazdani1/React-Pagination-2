@@ -38,6 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  color: white;
 }
 
 .pagination__link--active{
@@ -64,13 +65,16 @@
   text-decoration: none;
 }
 
+.selected-page{
+  color: red;
+}
+
 .pagination-design:hover{
   background-color: black;
   color: white;
+  text-decoration: none;
+  list-style-type: none;
 }
-
-
-
 
 
 .previous-button{
@@ -110,5 +114,10 @@
 }
 
 .pagination__link--disabled{
+
   display: none;
+
+  /* cursor: not-allowed;
+  color: gray;
+  text-decoration: none; */
 }

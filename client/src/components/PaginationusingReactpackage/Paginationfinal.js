@@ -39,6 +39,8 @@ const Paginationfinal = ({data}) => {
         previousLabel="Previous"
         previousClassName={"previous-button"}
         nextClassName={"next-button"}
+        pageRangeDisplayed={3}
+        pageLinkClassName={"selected-page"}
       />
     </div>
   );
