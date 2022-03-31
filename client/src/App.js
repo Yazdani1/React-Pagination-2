@@ -8,7 +8,7 @@ const App = () => {
   const [data, setData] = useState([]);
 
   //for pagination
-  const PER_PAGE = 1;
+  const PER_PAGE = 5;
 
   const [currentPage, setCurrentPage] = useState(0);
 
@@ -40,24 +40,27 @@ const App = () => {
 
   const offSet = currentPage * PER_PAGE;
 
-  const currrentPagedata = data
-    .slice(offSet, offSet + PER_PAGE)
-    .map((res, index) => (
-      <div key={index.id}>
-        <h1>{res.title}</h1>
-      </div>
-    ));
+  // const currrentPagedata = data
+  //   .slice(offSet, offSet + PER_PAGE)
+  //   .map((res, index) => (
+  //     <div key={index.id}>
+  //       <h1>{res.title}</h1>
+  //     </div>
+  //   ));
 
   //total page count
+
+  const currrentPagedata = data.slice(offSet, offSet + PER_PAGE);
 
   const pageCount = Math.ceil(data.length / PER_PAGE);
 
   return (
     <React.Fragment>
-      {currrentPagedata}
+  
+      <Posts posts={currrentPagedata}/>
       <ReactPaginate
         breakLabel="..."
-        nextLabel="next >"
+        nextLabel="Next"
         pageClassName={"pagination-design"}
         onPageChange={handlePageClick}
         containerClassName={"pagination"}
