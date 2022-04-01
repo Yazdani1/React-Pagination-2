@@ -1,7 +1,5 @@
 import React, { useEffect, useState } from "react";
 import Posts from "./components/Posts";
-import PaginationIndex from "./components/PaginationIndex";
-import ReactPaginate from "react-paginate";
 import "./App.css";
 import Paginationfinal from "./components/PaginationusingReactpackage/Paginationfinal";
 
