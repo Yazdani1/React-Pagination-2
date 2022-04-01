@@ -43,9 +43,9 @@
 
 .pagination__link--active{
 
-  border: 1px solid black;
+  border: 1px solid white;
   padding: 10px;
-  background-color: black;
+  background-color: tomato;
   color: white;
 }
 .pagination-design{
@@ -65,12 +65,35 @@
   text-decoration: none;
 }
 
+.break-class{
+  display: flex;
+  list-style-type: none;
+  margin: 5px;
+  border: 1px solid black;
+  padding: 7px;
+  height: 30px;
+  width: 30px;
+  color: white;
+  border-radius: 90px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+.break-class:hover{
+  background-color: tomato;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+}
+
 .selected-page{
-  color: red;
+  color: black;
 }
 
 .pagination-design:hover{
-  background-color: black;
+  background-color: tomato;
   color: white;
   text-decoration: none;
   list-style-type: none;

@@ -27,6 +27,7 @@ const Paginationfinal = ({data}) => {
       <Posts posts={currrentPagedata}/>
       <ReactPaginate
         breakLabel="..."
+        breakClassName="break-class"
         nextLabel="Next"
         pageClassName={"pagination-design"}
         onPageChange={handlePageClick}
