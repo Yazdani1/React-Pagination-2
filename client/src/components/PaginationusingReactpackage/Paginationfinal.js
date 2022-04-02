@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "../../App.css";
 import ReactPaginate from "react-paginate";
-import Posts from "../Posts";
 
 const Paginationfinal = ({ pageCount, handlePageClick }) => {
   return (
