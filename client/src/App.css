@@ -38,7 +38,7 @@
   display: flex;
   justify-content: center;
   align-items: center;
-  color: white;
+  color: black;
   margin: 10px;
 }
 
@@ -46,9 +46,17 @@
 
   border: 1px solid white;
   padding: 10px;
-  background-color: tomato;
-  color: white;
+  background-color: black;
+  color: black;
 }
+
+/* to change the pagination active item text color */
+
+.active-link-text{
+  color: black;
+}
+
+
 .pagination-design{
   display: flex;
   list-style-type: none;
@@ -57,7 +65,7 @@
   padding: 7px;
   height: 30px;
   width: 30px;
-  color: white;
+  color: black;
   border-radius: 90px;
   text-decoration: none;
   text-align: center;
@@ -90,11 +98,11 @@
 }
 
 .selected-page{
-  color: black;
+  color: rgb(208, 111, 111);
 }
 
 .pagination-design:hover{
-  background-color: tomato;
+  background-color: black;
   color: white;
   text-decoration: none;
   list-style-type: none;
