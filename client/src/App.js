@@ -7,6 +7,21 @@ const App = () => {
   const [data, setData] = useState([]);
 
 
+  //for pagination
+
+   //for pagination
+   const PER_PAGE = 5;
+   const [currentPage, setCurrentPage] = useState(1);
+   const handlePageClick = ({ selected: slectedPage }) => {
+     setCurrentPage(slectedPage);
+   };
+   const offSet = currentPage * PER_PAGE;
+   const currrentPagedata = data.slice(offSet, offSet + PER_PAGE);
+   //total page count
+   const pageCount = Math.ceil(data.length / PER_PAGE);
+   //end page paginaion
+
+
   const url = "https://jsonplaceholder.typicode.com/posts";
 
   const loadData = () => {
@@ -33,7 +48,9 @@ const App = () => {
   return (
     <React.Fragment>
 
-      <Paginationfinal data={data} />
+      <Posts posts={currrentPagedata}/>
+
+      <Paginationfinal pageCount={pageCount} handlePageClick={handlePageClick} />
 
     </React.Fragment>
   );
