@@ -35,6 +35,7 @@ const Paginationfinal = ({data}) => {
         previousLinkClassName={"pagination__link"}
         nextLinkClassName={"pagination__link"}
         activeClassName={"pagination__link--active"}
+        activeLinkClassName={"active-link-text"}
         pageCount={pageCount}
         disabledClassName={"pagination__link--disabled"}
         previousLabel="Previous"
