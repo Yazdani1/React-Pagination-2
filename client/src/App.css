@@ -40,22 +40,26 @@
   align-items: center;
   color: black;
   margin: 10px;
+  list-style: none;
+  text-decoration: none;
+}
+.pagination a{
+  text-decoration: none;
+  list-style: none;
+  color: black;
 }
 
-.pagination__link--active{
+.pagination__link--active {
 
   border: 1px solid white;
   padding: 10px;
   background-color: black;
-  color: black;
 }
 
-/* to change the pagination active item text color */
+.pagination__link--active a{
+  color: white;
 
-.active-link-text{
-  color: black;
 }
-
 
 .pagination-design{
   display: flex;
@@ -91,22 +95,42 @@
   text-decoration: none;
 }
 .break-class:hover{
-  background-color: tomato;
-  color: white;
-  text-decoration: none;
-  list-style-type: none;
-}
-
-.selected-page{
-  color: rgb(208, 111, 111);
-}
-
-.pagination-design:hover{
   background-color: black;
   color: white;
   text-decoration: none;
   list-style-type: none;
 }
+
+.break-class a:hover{
+  background-color: black;
+  color: white;
+  text-decoration: none;
+  list-style-type: none;
+}
+
+.selected-page a{
+color: white;
+}
+
+.pagination-design a:hover{
+  display: flex;
+  list-style-type: none;
+  margin: 5px;
+  border: 1px solid black;
+  padding: 10px;
+  height: 30px;
+  width: 30px;
+  background-color: black;
+  color: white;
+  border-radius: 90px;
+  text-decoration: none;
+  text-align: center;
+  align-items: center;
+  justify-content: center;
+  text-decoration: none;
+}
+
+
 
 
 .previous-button{
@@ -147,9 +171,9 @@
 
 .pagination__link--disabled{
 
-  display: none;
+  /* display: none; */
 
-  /* cursor: not-allowed;
+  cursor: not-allowed;
   color: gray;
-  text-decoration: none; */
+  text-decoration: none;
 }
