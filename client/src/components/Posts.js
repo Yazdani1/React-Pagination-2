@@ -1,10 +1,9 @@
 import React from "react";
 import "../App.css";
 import "./post.css";
-import * as XLSX from 'xlsx'
+import * as XLSX from "xlsx";
 
 const Posts = ({ posts }) => {
-  
   const downloadExcelfile = () => {
     var wb = XLSX.utils.book_new();
     var ws = XLSX.utils.json_to_sheet(posts);

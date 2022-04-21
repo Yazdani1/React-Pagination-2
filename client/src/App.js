@@ -10,7 +10,7 @@ const App = () => {
   //for pagination
 
    //for pagination
-   const PER_PAGE = 50;
+   const PER_PAGE = 5;
    const [currentPage, setCurrentPage] = useState(1);
    const handlePageClick = ({ selected: slectedPage }) => {
      setCurrentPage(slectedPage);
