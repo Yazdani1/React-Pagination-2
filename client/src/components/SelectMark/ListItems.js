@@ -73,6 +73,7 @@ const ListItems = () => {
         >
           All
         </button>
+        <h1>{list.length}</h1>
         <div className="list-items">
           <div className="row">
             {list.map((item, index) => (

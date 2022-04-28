@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FcOk } from "react-icons/fc";
 
-const ListComponent = ({ name, index, id}) => {
+const ListComponent = ({ name, index, id }) => {
   const [mark, setMark] = useState(false);
 
   const [count, setCount] = useState(0);
@@ -16,22 +16,24 @@ const ListComponent = ({ name, index, id}) => {
     //   setMark(false);
     // }
 
-    itemnumbers.push(index)
-    console.log("Total count:"+itemnumbers)
-
+    itemnumbers.push(index);
+    console.log("Total count:" + itemnumbers);
 
     setMark(!mark);
   };
 
   return (
     <React.Fragment>
-   
+      <p className="index-colorsss">Total:{itemnumbers.length}</p>
+
       {mark ? (
-        <div className="card card-items-mark" onClick={()=>handleClick(index)}>
+        <div
+          className="card card-items-mark"
+          onClick={() => handleClick(index)}
+        >
           <h6>{name}</h6>
           <p>{mark && <FcOk size={20} />}</p>
           <p className="index-color">{mark && count}</p>
-          <p className="index-color">{itemnumbers + 1}</p>
         </div>
       ) : (
         <div className="card card-items" onClick={handleClick}>

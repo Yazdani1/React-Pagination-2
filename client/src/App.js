@@ -4,6 +4,7 @@ import "./App.css";
 import Paginationfinal from "./components/PaginationusingReactpackage/Paginationfinal";
 import CardList from "./components/Multiple Item Select/CardList";
 import ListItems from "./components/SelectMark/ListItems";
+import List from "./components/List/List";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -64,7 +65,8 @@ const App = () => {
         handlePageClick={handlePageClick}
       />
       {/* <CardList /> */}
-      <ListItems />
+      {/* <ListItems /> */}
+      <List/>
 
       <div className="container" onClick={() => setShow(!show)}>
         {show ? (
