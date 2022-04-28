@@ -4,6 +4,7 @@ import "./post.css";
 import * as XLSX from "xlsx";
 
 const Posts = ({ posts }) => {
+
   const downloadExcelfile = () => {
     var wb = XLSX.utils.book_new();
     var ws = XLSX.utils.json_to_sheet(posts);
@@ -11,6 +12,8 @@ const Posts = ({ posts }) => {
     XLSX.utils.book_append_sheet(wb, ws, "Sheet1");
     XLSX.writeFile(wb, "MyExcel.xlsx");
   };
+
+  
 
   return (
     <div className="container post-container">
