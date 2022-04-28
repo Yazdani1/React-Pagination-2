@@ -2,25 +2,31 @@ import React, { useEffect, useState } from "react";
 import Posts from "./components/Posts";
 import "./App.css";
 import Paginationfinal from "./components/PaginationusingReactpackage/Paginationfinal";
+import CardList from "./components/Multiple Item Select/CardList";
+import ListItems from "./components/SelectMark/ListItems";
 
 const App = () => {
   const [data, setData] = useState([]);
 
+  //load data by clicking
+
+  const [loadapi, setLoadapi] = useState([]);
+
+  const [show, setShow] = useState(false);
 
   //for pagination
 
-   //for pagination
-   const PER_PAGE = 5;
-   const [currentPage, setCurrentPage] = useState(1);
-   const handlePageClick = ({ selected: slectedPage }) => {
-     setCurrentPage(slectedPage);
-   };
-   const offSet = currentPage * PER_PAGE;
-   const currrentPagedata = data.slice(offSet, offSet + PER_PAGE);
-   //total page count
-   const pageCount = Math.ceil(data.length / PER_PAGE);
-   //end page paginaion
-
+  //for pagination
+  const PER_PAGE = 5;
+  const [currentPage, setCurrentPage] = useState(1);
+  const handlePageClick = ({ selected: slectedPage }) => {
+    setCurrentPage(slectedPage);
+  };
+  const offSet = currentPage * PER_PAGE;
+  const currrentPagedata = data.slice(offSet, offSet + PER_PAGE);
+  //total page count
+  const pageCount = Math.ceil(data.length / PER_PAGE);
+  //end page paginaion
 
   const url = "https://jsonplaceholder.typicode.com/posts";
 
@@ -32,6 +38,7 @@ const App = () => {
       .then((result) => {
         if (result) {
           setData(result);
+          setLoadapi(result);
           console.log(result);
         }
       })
@@ -44,14 +51,47 @@ const App = () => {
     loadData();
   }, []);
 
+  const getapidatabyClicking = () => {
+    loadData();
+  };
 
   return (
     <React.Fragment>
+      <Posts posts={currrentPagedata} />
 
-      <Posts posts={currrentPagedata}/>
+      <Paginationfinal
+        pageCount={pageCount}
+        handlePageClick={handlePageClick}
+      />
+      {/* <CardList /> */}
+      <ListItems />
 
-      <Paginationfinal pageCount={pageCount} handlePageClick={handlePageClick} />
+      <div className="container" onClick={() => setShow(!show)}>
+        {show ? (
+          <div
+            className="card mark-get-data-button-true"
+            onClick={getapidatabyClicking}
+          >
+            <p>Get Data</p>
+          </div>
+        ) : (
+          <div
+            className="card mark-get-data-button"
+            onClick={getapidatabyClicking}
+          >
+            <p>Get Datasss</p>
+          </div>
+        )}
+      </div>
 
+      {show &&
+        loadapi.map((item, index) => (
+          <>
+            <div className="container">
+              <h6>{item.title}</h6>
+            </div>
+          </>
+        ))}
     </React.Fragment>
   );
 };
