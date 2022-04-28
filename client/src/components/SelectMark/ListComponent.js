@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FcOk } from "react-icons/fc";
 
-const ListComponent = ({ name, index, id }) => {
+const ListComponent = ({ name, index, id}) => {
   const [mark, setMark] = useState(false);
 
   const [count, setCount] = useState(0);
