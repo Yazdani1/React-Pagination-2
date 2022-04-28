@@ -3,6 +3,7 @@ import Posts from "./components/Posts";
 import "./App.css";
 import Paginationfinal from "./components/PaginationusingReactpackage/Paginationfinal";
 import CardList from "./components/Multiple Item Select/CardList";
+import ListItems from "./components/SelectMark/ListItems";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -51,7 +52,8 @@ const App = () => {
         pageCount={pageCount}
         handlePageClick={handlePageClick}
       />
-      <CardList />
+      {/* <CardList /> */}
+      <ListItems/>
     </React.Fragment>
   );
 };

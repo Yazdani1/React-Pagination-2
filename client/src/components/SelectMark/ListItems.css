@@ -1,0 +1,11 @@
+.list-items{
+    margin: 10px;
+    margin-top: 50px;
+    padding: 10px;
+}
+.card-items{
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+}
