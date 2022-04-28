@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { FcOk } from "react-icons/fc";
 
-const ListComponent = ({ name }) => {
+const ListComponent = ({ name,index }) => {
   const [mark, setMark] = useState(false);
 
   const [count, setCount] = useState(0);
@@ -19,6 +19,8 @@ const ListComponent = ({ name }) => {
         <div className="card card-items-mark" onClick={handleClick}>
           <h6>{name}</h6>
           <p>{mark && <FcOk size={20} />}</p>
+          <p className="index-color">{mark && count}</p>
+
         </div>
       ) : (
         <div className="card card-items" onClick={handleClick}>

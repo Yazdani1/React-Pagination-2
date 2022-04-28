@@ -44,7 +44,7 @@ const ListItems = () => {
             {list.map((item, index) => (
               <>
                 <div className="col-xl-3 col-lg-3">
-                  <ListComponent key={item.id} name={item.name} />
+                  <ListComponent key={item.id} name={item.name} index={index+1} />
                 </div>
               </>
             ))}
