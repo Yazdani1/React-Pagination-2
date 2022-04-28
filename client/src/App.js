@@ -48,7 +48,7 @@ const App = () => {
   };
 
   useEffect(() => {
-    // loadData();
+    loadData();
   }, []);
 
   const getapidatabyClicking = () => {
