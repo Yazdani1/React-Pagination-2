@@ -8,6 +8,12 @@ import ListItems from "./components/SelectMark/ListItems";
 const App = () => {
   const [data, setData] = useState([]);
 
+  //load data by clicking
+
+  const [loadapi, setLoadapi] = useState([]);
+
+  const [show, setShow] = useState(false);
+
   //for pagination
 
   //for pagination
@@ -32,6 +38,7 @@ const App = () => {
       .then((result) => {
         if (result) {
           setData(result);
+          setLoadapi(result);
           console.log(result);
         }
       })
@@ -41,8 +48,12 @@ const App = () => {
   };
 
   useEffect(() => {
-    loadData();
+    // loadData();
   }, []);
+
+  const getapidatabyClicking = () => {
+    loadData();
+  };
 
   return (
     <React.Fragment>
@@ -53,7 +64,34 @@ const App = () => {
         handlePageClick={handlePageClick}
       />
       {/* <CardList /> */}
-      <ListItems/>
+      <ListItems />
+
+      <div className="container" onClick={() => setShow(!show)}>
+        {show ? (
+          <div
+            className="card mark-get-data-button-true"
+            onClick={getapidatabyClicking}
+          >
+            <p>Get Data</p>
+          </div>
+        ) : (
+          <div
+            className="card mark-get-data-button"
+            onClick={getapidatabyClicking}
+          >
+            <p>Get Datasss</p>
+          </div>
+        )}
+      </div>
+
+      {show &&
+        loadapi.map((item, index) => (
+          <>
+            <div className="container">
+              <h6>{item.title}</h6>
+            </div>
+          </>
+        ))}
     </React.Fragment>
   );
 };

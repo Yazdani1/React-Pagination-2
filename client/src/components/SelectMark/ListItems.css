@@ -8,4 +8,42 @@
     text-align: center;
     cursor: pointer;
     margin-top: 15px;
+    height: 100px;
+}
+.card-items-mark{
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    height: 100px;
+}
+
+.mark-get-data-button{
+    color: black;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    height: 150px;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    margin-bottom: 30px;
+    width: 250px;
+    border-radius: 10px;
+
+}
+.mark-get-data-button-true{
+    background-color: brown;
+    color: white;
+    padding: 10px;
+    text-align: center;
+    cursor: pointer;
+    margin-top: 15px;
+    height: 100px;
+    margin-bottom: 30px;
+    width: 250px;
+    border-radius: 10px;
 }

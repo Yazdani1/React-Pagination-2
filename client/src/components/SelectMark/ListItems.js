@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import React, { useState,useEffect } from "react";
 import "./ListItems.css";
 import ListComponent from "./ListComponent";
+
 
 const ListItems = () => {
   const data = [
@@ -32,6 +33,9 @@ const ListItems = () => {
 
   const [list, setList] = useState(data);
 
+
+ 
+
   return (
     <React.Fragment>
       <div className="container">
@@ -45,6 +49,7 @@ const ListItems = () => {
               </>
             ))}
           </div>
+
         </div>
       </div>
     </React.Fragment>
