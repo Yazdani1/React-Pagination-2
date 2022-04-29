@@ -64,9 +64,9 @@ const App = () => {
         pageCount={pageCount}
         handlePageClick={handlePageClick}
       />
-      {/* <CardList /> */}
+      <CardList />
       {/* <ListItems /> */}
-      <List/>
+      {/* <List/> */}
 
       <div className="container" onClick={() => setShow(!show)}>
         {show ? (

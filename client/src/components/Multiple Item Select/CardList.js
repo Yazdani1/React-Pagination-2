@@ -16,31 +16,41 @@ const CardList = () => {
       id: 3,
     },
     {
-        name: "Nuxt js",
-        id: 4,
-      },
-      {
-        name: "Vue js",
-        id: 5,
-      },
-      {
-        name: "Express js",
-        id: 6,
-      },
+      name: "Nuxt js",
+      id: 4,
+    },
+    {
+      name: "Vue js",
+      id: 5,
+    },
+    {
+      name: "Express js",
+      id: 6,
+    },
   ];
 
   const [list, setList] = useState(data);
+  const [newItem, setNewItem] = useState([]);
+
+  const newIndexPositionhold = [];
 
   const handleSeletect = (id) => {
-      
-    const newList = list.filter((item) => item.id !== id);
+    // newIndexPositionhold.push(id);
+    // const newList = list.filter((item) => item.id !== id);
+    // setList(newList);
 
-    setList(newList);
+    // setNewItem(id);
+    // setList([...list, newItem]);
+
+    setList(id);
+
+    setNewItem([...newItem,list])
   };
 
   return (
     <React.Fragment>
       <div className="container">
+        <h5>Total List Items: {newItem.length}</h5>
         <div className="list-items">
           <div className="row">
             {list.map((item, index) => (
@@ -52,6 +62,9 @@ const CardList = () => {
                     onClick={() => handleSeletect(item.id)}
                   >
                     <h6>{item.name}</h6>
+                    <h6>{item.id}</h6>
+                    <h1>{index}</h1>
+
                   </div>
                 </div>
               </>

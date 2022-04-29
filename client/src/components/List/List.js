@@ -13,9 +13,20 @@ const List = () => {
   //   ]);
   // };
 
+  const data = [
+    {
+      name: "React",
+      id:1
+    },
+    {
+      name: "Vue",
+      id:2
+    }
+  ]
+
   const addItem = () => {
     // const newId = list.map((i,index)=>index)
-    setList([...list, setCount(count+1)]);
+    setList([...list, data]);
   };
 
   return (
@@ -25,6 +36,7 @@ const List = () => {
         <p onClick={addItem}>Add</p>
         {list.map((item) => (
           <>
+          <p>{item.name}</p>
           </>
         ))}
       </div>
