@@ -12,8 +12,11 @@ const App = () => {
   //load data by clicking
 
   const [loadapi, setLoadapi] = useState([]);
-
   const [show, setShow] = useState(false);
+
+  //checkbox
+
+  const [checkdata, setCheckData] = useState(false);
 
   //for pagination
 
@@ -64,12 +67,24 @@ const App = () => {
         pageCount={pageCount}
         handlePageClick={handlePageClick}
       />
-      <CardList />
-      {/* <ListItems /> */}
+      {/* <CardList /> */}
+      <ListItems />
       {/* <List/> */}
 
       <div className="container" onClick={() => setShow(!show)}>
-        {show ? (
+        <div
+          className={
+            show
+              ? "card mark-get-data-button-true"
+              : "card mark-get-data-button"
+          }
+          onClick={getapidatabyClicking}
+        >
+          <p>Get Data</p>
+        </div>
+       
+
+        {/* {show ? (
           <div
             className="card mark-get-data-button-true"
             onClick={getapidatabyClicking}
@@ -83,10 +98,32 @@ const App = () => {
           >
             <p>Get Datasss</p>
           </div>
-        )}
+        )} */}
       </div>
 
-      {show &&
+      <div
+          className={
+            checkdata
+              ? "card mark-get-data-button-true"
+              : "card mark-get-data-button"
+          }
+        >
+          <label>
+            <input type="checkbox" onChange={() => setCheckData(!checkdata)} />
+            Get Api Data
+          </label>
+        </div>
+
+      {/* {show &&
+        loadapi.map((item, index) => (
+          <>
+            <div className="container">
+              <h6>{item.title}</h6>
+            </div>
+          </>
+        ))} */}
+
+      {checkdata &&
         loadapi.map((item, index) => (
           <>
             <div className="container">
