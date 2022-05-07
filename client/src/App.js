@@ -5,6 +5,7 @@ import Paginationfinal from "./components/PaginationusingReactpackage/Pagination
 import CardList from "./components/Multiple Item Select/CardList";
 import ListItems from "./components/SelectMark/ListItems";
 import List from "./components/List/List";
+import Video from "./components/Video Player/Video";
 
 const App = () => {
   const [data, setData] = useState([]);
@@ -82,7 +83,6 @@ const App = () => {
         >
           <p>Get Data</p>
         </div>
-       
 
         {/* {show ? (
           <div
@@ -102,17 +102,17 @@ const App = () => {
       </div>
 
       <div
-          className={
-            checkdata
-              ? "card mark-get-data-button-true"
-              : "card mark-get-data-button"
-          }
-        >
-          <label>
-            <input type="checkbox" onChange={() => setCheckData(!checkdata)} />
-            Get Api Data
-          </label>
-        </div>
+        className={
+          checkdata
+            ? "card mark-get-data-button-true"
+            : "card mark-get-data-button"
+        }
+      >
+        <label>
+          <input type="checkbox" onChange={() => setCheckData(!checkdata)} />
+          Get Api Data
+        </label>
+      </div>
 
       {/* {show &&
         loadapi.map((item, index) => (
@@ -131,6 +131,8 @@ const App = () => {
             </div>
           </>
         ))}
+
+      <Video />
     </React.Fragment>
   );
 };
